@@ -3,6 +3,7 @@ package com.org.data.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,18 +34,21 @@ public class RestApiController {
     	return service.getEmployeeById(empId);
     } 
   
-    @PostMapping("/create")
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN') OR hasRole('USER')")
     public Employee addEmployee(@RequestBody Employee empForm) {
         service.addEmployee(empForm);
         return service.getEmployeeByNo(empForm.getEmpNo());
     }
   
-    @PutMapping("/update")
+    @PutMapping
+    @PreAuthorize("hasRole('ADMIN') OR hasRole('USER')")
     public Employee updateEmployee(@RequestBody Employee empForm) {  
         return service.updateEmployee(empForm);
     }
   
     @DeleteMapping("/{empId}")
+    @PreAuthorize("hasRole('ADMIN') OR hasRole('USER')")
     public void deleteEmployee(@PathVariable("empId") int empId) { 
         service.deleteEmpl(empId);
     }

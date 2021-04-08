@@ -25,14 +25,12 @@ app.controller("EmployeeController", function($scope, $http) {
     // Call: http://localhost:8080/employee
     $scope.submitEmployee = function() {
         var method = "";
-        var url = "";
+        var url = '/employees';
  
         if ($scope.employeeForm.id == -1) {
             method = "POST";
-            url = '/employees/create';
         } else {
             method = "PUT";
-            url = '/employees/update';
         }
  
         $http({
@@ -55,7 +53,10 @@ app.controller("EmployeeController", function($scope, $http) {
     $scope.deleteEmployee = function(employee) {
         $http({
             method: 'DELETE',
-            url: '/employees/' + employee.id
+            url: '/employees/' + employee.id,
+            headers: {
+                'Authorization': 'Bearer '+$scope.authResp.accessToken
+            }
         }).then(_success, _error);
     };
  

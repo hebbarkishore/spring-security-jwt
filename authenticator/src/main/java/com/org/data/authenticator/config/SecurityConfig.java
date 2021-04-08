@@ -3,6 +3,7 @@ package com.org.data.authenticator.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -58,6 +59,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {    	
     	http.authorizeRequests()
     	
+    	
     	// all other requests need to be authenticated
     	.anyRequest().authenticated()
 
@@ -65,8 +67,10 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
     	.and().exceptionHandling().authenticationEntryPoint(invalidLoginAttemptHandler).and().sessionManagement()
     	.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     	
+    	
     	// Add a filter to validate the tokens with every request
     	http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+        http.csrf().disable(); //Since we use the JWT token csrf should be ignored/disabled.
 
     }
     
@@ -77,7 +81,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
         	.antMatchers("/")
         	.antMatchers("/css/**")
         	.antMatchers("/js/**")
-            .antMatchers("/h2-console/**");
+            .antMatchers("/h2-console/**")
+            .antMatchers(HttpMethod.OPTIONS);
     }
 
 }

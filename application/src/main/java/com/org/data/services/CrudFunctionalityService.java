@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.org.data.entity.Employee;
 import com.org.data.repository.EmployeeRepository;
 
-@Service
+@Service 
 public class CrudFunctionalityService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CrudFunctionalityService.class);
@@ -58,6 +58,5 @@ public class CrudFunctionalityService {
 	public void deleteEmpl(int id) {
 		logger.info("deleteemployee");
 		employeeRepository.deleteById(id);;
-	}
-	
+	}	
 }

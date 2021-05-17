@@ -13,7 +13,7 @@ import com.org.data.authenticator.repository.UserRepository;
  * 
  * @author Kishore Hebbar
  *
- */
+ */ 
 
 @Component
 public class UserAuthDetailsService implements UserDetailsService {

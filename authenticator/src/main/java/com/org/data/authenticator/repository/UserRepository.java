@@ -8,7 +8,7 @@ import com.org.data.authenticator.entity.User;
  * 
  * @author Kishore Hebbar
  *
- */
+ */ 
 
 @Repository
 public interface UserRepository extends JpaRepository<User,String> {

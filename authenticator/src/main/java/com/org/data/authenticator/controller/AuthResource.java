@@ -14,7 +14,7 @@ import com.org.data.authenticator.model.AuthenticateRequest;
 import com.org.data.authenticator.model.JwtAuthenticationResponse;
 import com.org.data.authenticator.model.UserPrincipal;
 import com.org.data.authenticator.service.JWTTokenProvider;
-
+ 
 /**
  * 
  * @author Kishore Hebbar

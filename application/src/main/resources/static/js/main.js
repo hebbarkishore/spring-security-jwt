@@ -16,7 +16,7 @@ app.controller("EmployeeController", function($scope, $http) {
         password: "testMe"
     }
     
-    $scope.authResp={};
+    $scope.authResp={}; 
  
     // Now load the data from server
     _refreshEmployeeData();

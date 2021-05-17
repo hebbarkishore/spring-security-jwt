@@ -8,7 +8,7 @@
         <Console name="ConsoleLog" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="${LOG_PATTERN}" />
         </Console>
- 
+  
         <RollingFile name="appLog"
             fileName="${APP_LOG_ROOT}/secure_resource.log"
             filePattern="${APP_LOG_ROOT}/secure_resource-%d{yyyy-MM-dd}-%i.log">

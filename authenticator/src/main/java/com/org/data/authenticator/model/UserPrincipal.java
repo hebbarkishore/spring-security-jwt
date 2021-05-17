@@ -16,7 +16,7 @@ import java.util.List;
  * @author Kishore Hebbar
  *
  */
-
+ 
 public class UserPrincipal implements UserDetails {
 
 	private static final long serialVersionUID = 1L;

@@ -26,7 +26,7 @@ import com.org.data.services.CrudFunctionalityService;
 public class ApplicationTest {
 	@Autowired
 	private MockMvc mockMvc;
-
+ 
 	@MockBean
 	private CrudFunctionalityService service;
 	

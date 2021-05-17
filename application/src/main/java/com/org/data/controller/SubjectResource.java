@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/Subject")
+@RequestMapping("/Subject") 
 public class SubjectResource {
 
     private final SubjectRepository subjectRepository;

@@ -36,7 +36,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 
     @Autowired
     private JwtAuthenticationFilter jwtRequestFilter;
-
+ 
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder

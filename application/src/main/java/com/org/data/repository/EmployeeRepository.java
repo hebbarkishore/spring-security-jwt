@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.org.data.entity.Employee;
 
-@Repository
+@Repository 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	Employee findByEmpNo(String empNo);
 }

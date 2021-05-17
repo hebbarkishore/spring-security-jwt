@@ -21,7 +21,7 @@ import com.org.data.services.CrudFunctionalityService;
         MediaType.APPLICATION_XML_VALUE })
 public class RestApiController {
   
-    @Autowired
+    @Autowired 
     private CrudFunctionalityService service;
   
     @GetMapping
@@ -35,7 +35,7 @@ public class RestApiController {
     } 
   
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN') OR hasRole('USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     public Employee addEmployee(@RequestBody Employee empForm) {
         service.addEmployee(empForm);
         return service.getEmployeeByNo(empForm.getEmpNo());

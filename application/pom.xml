@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>org-secure-data-application</artifactId>
-
+ 
     <dependencies>
         <dependency>
             <groupId>com.org.data</groupId>

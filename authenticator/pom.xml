@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.org.data</groupId>
-        <artifactId>org-secure-data</artifactId>
+        <artifactId>spring-security-jwt</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>org-secure-data-authenticator</artifactId>
+    <artifactId>spring-security-jwt-authenticator</artifactId>
  
     <dependencies>
         <dependency>
